@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    font-family: "JetBrains Mono", monospace;
+    overflow: hidden;
+}
+
+
+/* container */
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in;
+}
+
+#colorFire {
+    position: absolute;
+    height: 6%;
+    top: 10px;
+}
+
+.colorCode {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.colorCode i {
+    cursor: pointer;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+  
+.colorCode i.clicked {
+    transform: scale(1.2);
+}
+  
+.colorCode #heart{
+    font-size: 36px;
+    margin-right: 20px;
+}
+
+.colorCode #clipboard {
+    font-size: 30px;
+    margin-left: 12px;
+}
+
+.hexColor {
+    color: white;
+    font-size: 3em;
+    user-select: none;
+    margin-right: 10px;
+}
+
+
+/* footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+footer img {
+	height: 25px;
+}
+  
+
+
+/* Browser's scroll bar customization */
+::-webkit-scrollbar {
+    width: 8px; 
+    background-color: #202324 !important;
+}
+
+::-webkit-scrollbar-track {
+    margin-top: 96px;
+    margin-bottom: 2px;
+}
+::-webkit-scrollbar-thumb {
+    background: #333333;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(101, 105, 107);
+}
+
+

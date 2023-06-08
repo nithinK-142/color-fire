@@ -1,0 +1,27 @@
+dialog {
+opacity: 0;
+scale: 0;
+display: block;
+padding: 10px;
+top: 22%;
+left: 31%;
+}
+  
+dialog[open] {
+ background-color: gainsboro;
+ opacity: 1;
+ scale: 1.4;
+ transition: all 0.4s;
+ border: none;
+ box-shadow: 0 0 1em rgb(0, 0, 0 / .3);
+}
+
+dialog button {
+cursor: pointer;
+padding: 4px;
+margin-left: 240px;
+}
+
+strong {
+    text-align: center;
+}

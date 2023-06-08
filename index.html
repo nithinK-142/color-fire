@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="darkreader-lock">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/button.css">
+  <link rel="stylesheet" href="./css/popup.css">
+  <link rel="stylesheet" href="./css/navbar.css">
+  <link rel="stylesheet" href="./css/dialog.css">
+  <link rel="stylesheet" href="" id="gridLink">
+  <link rel="shortcut icon" href="./img/fire-neon-favicon.png" type="image/x-icon">
+  <title>Color Fire</title>
+</head>
+<body>
+  <nav>
+    <div class="menu-bar">
+      <ol class="leftSide">
+        <li><a><i class="fa-solid fa-user"></i></a></li>
+        <li><a id="dialogBtn" title="About"><i class="fa-solid fa-info"></i></a></li>
+      </ol>
+      <ol class="rightSide">
+        <li><a id="popup-btn"><i class="fa-solid fa-heart" id="favoriteHeart"></i></a></li>
+        <li><a id="share" title="Download Favorites"><i class="fa-solid fa-download"></i></span> </a></li>
+        <li><a><i class="fa-solid fa-right-from-bracket"></i></a></li>
+      </ol>
+    </div>
+  </nav>
+
+  <dialog id="about">
+    <h3><pre><strong><h2>Color Fire</h2></strong>
+  This app allows you to generate and save your favorite colors.
+      
+-> Generate and save any number of colors.The application displays 
+   the generated colors with their corresponding color codes.
+
+-> Copy generated colors to clipboard.
+
+-> Generate random colors and add to favorites, which you like.
+
+-> View favorite colors in a list or grid format
+
+-> Set background color from your favorites.
+
+-> Can also remove them from favorites.
+
+-> Download your favorite colorcodes as json.
+
+    </pre></h3>
+    <button id="alright">alright!</button>
+</dialog>
+
+  <div id="popup-wrapper" class="popup-container">
+    <div class="popup-content">
+
+      <div class="title-wrapper">
+        <h2>Favorite Colors</h2>
+        <span><a id="list"><i class="fa-solid fa-bars"></i>List</a></span>
+        <span><a id="grid"><i class="fa-solid fa-grip"></i>Grid</a></span>
+      </div>
+
+      <div id="color-populate"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- <img id="colorFire" src="./img/fire-neon-logo.png" alt="logo"> -->
+    <div class="colorCode">
+      <i class="fa-solid fa-heart" id="heart"></i>
+      <p class="hexColor"></p>
+      <i class="fa-solid fa-clipboard" id="clipboard"></i>
+    </div>
+    <button class="button-85" role="button">click for color</button>
+  </div>
+
+  <footer>
+    <a href="https://github.com/nithinK-142/color-fire" target="_blank" rel="noopener noreferrer"> <img id="git" src="img/git.png" alt="git"> </a>
+  </footer>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+  <!-- Your Firebase configuration and initialization -->
+  <script src="./js/fireConfig.js"></script>
+
+  <!-- Your script -->
+  <script src="./js/script.js"></script>
+  <script src="./js/dialog.js"></script>
+  <script src="./js/share.js"></script>
+  <script src="./js/popup.js"></script>
+
+</body>
+</html>
