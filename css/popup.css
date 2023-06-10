@@ -121,3 +121,32 @@
   visibility: visible;
   opacity: 1;
 }
+
+
+/* Active */
+/* popup-wrapper */
+.popup-content.active {
+  width: 50%;
+  max-height: 85%;
+}
+
+.popup-content.active p {
+  height: 140px;
+}
+
+/* title-wrapper */
+.title-wrapper.active h2 {
+  font-size: 56px;
+}
+
+/* color-populate */
+#color-populate.active {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 8px;
+  text-align: center;
+}
+
+#color-populate.active span {
+  height: 140px;
+}

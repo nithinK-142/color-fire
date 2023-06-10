@@ -2,16 +2,14 @@ const popup = document.getElementById('popup-wrapper');
 const popUpBtn = document.getElementById('popup-btn');
 const close = document.getElementById('close');
 const colorList = document.getElementById('color-populate');
-const titleHeader = document.querySelector('.title-wrapper h2');
 const gridButton = document.getElementById('grid');
 const listButton = document.getElementById('list');
 
+const popupContent = document.querySelectorAll('.popup-content');
+const titleWrapper = document.querySelectorAll('.title-wrapper');
+
 listButton.classList.add('active');
 
-//link grid css
-const stylesheet = document.getElementById("gridLink");
-const popupStyle = "../css/popup.css";
-const gridStyle = "../css/popupGrid.css";
 let isGrid = false;
 
 
@@ -24,28 +22,46 @@ window.onclick = function (event) {
     popup.classList.remove('show');
 };
 
-function switchStyles(styles) {
-  if (styles === "list") 
-    stylesheet.href = popupStyle;
-  else if(styles === "grid") 
-    stylesheet.href = gridStyle;
-}
-
 gridButton.addEventListener('click', () => {
-  isGrid = true;
-  switchStyles("grid");
-  gridButton.classList.add('active');
-  listButton.classList.remove('active');
-  titleHeader.textContent = 'Favorite Colors';
+  addActiveClass();
 });
 
 listButton.addEventListener('click', () => {
-  isGrid = false;
-  switchStyles("list");
-  listButton.classList.add('active');
-  gridButton.classList.remove('active');
-  titleHeader.textContent = 'Favorite Colors';
+  removeActiveClass();
 });
+
+function addActiveClass() {
+  isGrid = true;
+  listButton.classList.remove('active');
+  gridButton.classList.add('active');
+
+  for (let i = 0; i < popupContent.length; i++) {
+    popupContent[i].classList.add('active');
+  }
+
+  for (let j = 0; j < titleWrapper.length; j++) {
+    titleWrapper[j].classList.add('active');
+  }
+
+  colorList.classList.add('active');
+}
+
+
+function removeActiveClass() {
+  isGrid = false;
+  gridButton.classList.remove('active');
+  listButton.classList.add('active');
+
+  for (let i = 0; i < popupContent.length; i++) {
+    popupContent[i].classList.remove('active');
+  }
+
+  for (let j = 0; j < titleWrapper.length; j++) {
+    titleWrapper[j].classList.remove('active');
+  }
+
+  colorList.classList.remove('active');
+}
 
 
 //color Retrieved from firebase.
